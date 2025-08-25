@@ -117,15 +117,15 @@ class _HomeContent extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             // Quick Actions
             Container(
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -136,10 +136,10 @@ class _HomeContent extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             // Next Appointment
-                         Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'Your Next Appointment',
                 style: TextStyle(
@@ -152,10 +152,10 @@ class _HomeContent extends StatelessWidget {
             Container(
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                  color: const Color(0xFFE3F2FD),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              decoration: BoxDecoration(
+                color: const Color(0xFFE3F2FD),
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Row(
                 children: [
                   Expanded(
@@ -180,7 +180,10 @@ class _HomeContent extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 24,
+                              vertical: 12,
+                            ),
                             elevation: 2,
                           ),
                           child: const Text(
@@ -211,7 +214,7 @@ class _HomeContent extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             // To Do List
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -228,17 +231,14 @@ class _HomeContent extends StatelessWidget {
                   const Spacer(),
                   Text(
                     'See all...',
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
                   ),
                 ],
               ),
             ),
             _ToDoItem(title: 'Medicine', date: '21/8/2025', time: '9:00 AM'),
             _ToDoItem(title: 'Medicine', date: '21/8/2025', time: '9:00 AM'),
-            
+
             // Add Button
             Align(
               alignment: Alignment.bottomRight,
@@ -251,11 +251,7 @@ class _HomeContent extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    size: 28,
-                    color: Colors.white,
-                  ),
+                  child: const Icon(Icons.add, size: 28, color: Colors.white),
                 ),
               ),
             ),
@@ -269,9 +265,9 @@ class _HomeContent extends StatelessWidget {
 class _QuickAction extends StatelessWidget {
   final IconData icon;
   final String label;
-  
+
   const _QuickAction({required this.icon, required this.label});
-  
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -287,11 +283,7 @@ class _QuickAction extends StatelessWidget {
               width: 2,
             ),
           ),
-          child: Icon(
-            icon,
-            color: const Color(0xFF1976D2),
-            size: 28,
-          ),
+          child: Icon(icon, color: const Color(0xFF1976D2), size: 28),
         ),
         const SizedBox(height: 8),
         Text(
@@ -309,18 +301,22 @@ class _QuickAction extends StatelessWidget {
 
 class _ToDoItem extends StatelessWidget {
   final String title, date, time;
-  
-  const _ToDoItem({required this.title, required this.date, required this.time});
-  
+
+  const _ToDoItem({
+    required this.title,
+    required this.date,
+    required this.time,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
       child: Row(
         children: [
           Container(
@@ -328,10 +324,7 @@ class _ToDoItem extends StatelessWidget {
             height: 24,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(
-                color: const Color(0xFF1976D2),
-                width: 2,
-              ),
+              border: Border.all(color: const Color(0xFF1976D2), width: 2),
             ),
           ),
           const SizedBox(width: 16),
@@ -376,10 +369,7 @@ class _ToDoItem extends StatelessWidget {
                   const SizedBox(width: 4),
                   Text(
                     time,
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
                   ),
                 ],
               ),
