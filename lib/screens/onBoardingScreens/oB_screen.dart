@@ -106,10 +106,21 @@ class _ObScreenState extends State<ObScreen> {
 
                 GestureDetector(
                   onTap: () {
-                    _controller.nextPage(
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.ease,
-                    );
+                    if (onLastPage) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return StartPage();
+                          },
+                        ),
+                      );
+                    } else {
+                      _controller.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.ease,
+                      );
+                    }
                   },
                   child: Stack(
                     alignment: Alignment(0.1, 0),
